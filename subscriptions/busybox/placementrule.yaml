@@ -5,7 +5,9 @@ metadata:
   labels:
       app: busybox-sample
   name: busybox-placement
+  namespace: busybox-sample
 spec:
+  schedulerName: Ramen
   clusterSelector:
     matchLabels:
       'usage': 'test'

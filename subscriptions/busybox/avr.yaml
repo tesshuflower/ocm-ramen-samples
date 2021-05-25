@@ -2,14 +2,14 @@
 apiVersion: ramendr.openshift.io/v1alpha1
 kind: ApplicationVolumeReplication
 metadata:
-  name: avr-test-for-busybox-subs
+  name: avr-for-busybox-app
 spec:
   drClusterPeersRef:
     name: dr-peers-for-busybox-app
   placement:
-      placementRef:
-        kind: PlacementRule
-        name: busybox-placement
+    placementRef:
+      kind: PlacementRule
+      name: busybox-placement
   pvcSelector:
     matchLabels:
       appclass: gold
@@ -17,6 +17,3 @@ spec:
   s3Endpoint: path/to/s3Endpoint
   s3Region: "us-west"
   s3SecretName: SecretName
-  subscriptionSelector:
-    matchLabels:
-      app: busybox-sample
