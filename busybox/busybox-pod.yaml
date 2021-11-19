@@ -19,3 +19,7 @@ spec:
       persistentVolumeClaim:
         claimName: busybox-pvc
         readOnly: false
+    - name: mypvc2
+      persistentVolumeClaim:
+        claimName: busybox-pvc-2
+        readOnly: false
