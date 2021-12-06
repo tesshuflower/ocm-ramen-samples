@@ -14,14 +14,8 @@ spec:
       volumeMounts:
         - name: mypvc
           mountPath: /mnt/test
-        - name: mypvc2
-          mountPath: /mnt/test2
   volumes:
     - name: mypvc
       persistentVolumeClaim:
         claimName: busybox-pvc
-        readOnly: false
-    - name: mypvc2
-      persistentVolumeClaim:
-        claimName: busybox-pvc-2
         readOnly: false
