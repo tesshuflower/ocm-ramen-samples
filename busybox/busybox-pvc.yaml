@@ -7,7 +7,7 @@ metadata:
     appname: busybox
 spec:
   accessModes: [ "ReadWriteOnce" ]
-  storageClassName: "gp2-ramen-test-bug"
+  storageClassName: "gp2-csi"
   resources:
     requests:
       storage: 1Gi
