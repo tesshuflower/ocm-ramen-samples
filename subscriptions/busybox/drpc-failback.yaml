@@ -7,10 +7,12 @@ metadata:
   labels:
     app: busybox-sample
 spec:
-  preferredCluster: "cluster1"
-  action: "Failback"
+  preferredCluster: "tflow-rmn-aws-cluster5"
+  action: "Failover"
+  failoverCluster: "tflow-rmn-aws-cluster5"
   drPolicyRef:
     name: dr-policy
+    namespace: ramen-samples
   placementRef:
     kind: PlacementRule
     name: busybox-placement

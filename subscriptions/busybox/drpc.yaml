@@ -6,10 +6,10 @@ metadata:
   labels:
     app: busybox-sample
 spec:
-  volumeReplicationPlugin: "VolSync"
-  preferredCluster: "cluster1"
+  preferredCluster: "tflow-rmn-aws-cluster5"
   drPolicyRef:
     name: dr-policy
+    namespace: ramen-samples
   placementRef:
     kind: PlacementRule
     name: busybox-placement

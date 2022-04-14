@@ -5,8 +5,14 @@ metadata:
   name: dr-policy
 spec:
   drClusterSet:
-  - name: hub
-    s3ProfileName: minio-on-hub
-  - name: cluster1
-    s3ProfileName: minio-on-hub
-  schedulingInterval: 1m
+  - name: tflow-rmn-aws-cluster5
+    #s3ProfileName: minio-on-hub
+    s3ProfileName: NoS3
+    region: "mytest"
+    clusterFence: ManuallyFenced
+  - name: tflow-rmn-aws-cluster6
+    #s3ProfileName: minio-on-hub
+    s3ProfileName: NoS3
+    region: "mytest"
+    clusterFence: ManuallyFenced
+  schedulingInterval: 10m
