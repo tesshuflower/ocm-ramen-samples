@@ -5,12 +5,12 @@ metadata:
   name: dr-policy
 spec:
   drClusterSet:
-  - name: tflow-rmn-aws-cluster5
+  - name: cluster1
     #s3ProfileName: minio-on-hub
     s3ProfileName: NoS3
     region: "mytest"
     clusterFence: ManuallyFenced
-  - name: tflow-rmn-aws-cluster6
+  - name: cluster2
     #s3ProfileName: minio-on-hub
     s3ProfileName: NoS3
     region: "mytest"

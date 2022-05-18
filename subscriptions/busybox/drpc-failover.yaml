@@ -7,9 +7,9 @@ metadata:
   labels:
     app: busybox-sample
 spec:
-  preferredCluster: "tflow-rmn-aws-cluster5"
+  preferredCluster: "cluster1"
   action: "Failover"
-  failoverCluster: "tflow-rmn-aws-cluster6"
+  failoverCluster: "cluster2"
   drPolicyRef:
     name: dr-policy
     namespace: ramen-samples
