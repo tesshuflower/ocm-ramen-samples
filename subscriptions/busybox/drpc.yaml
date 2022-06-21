@@ -6,7 +6,7 @@ metadata:
   labels:
     app: busybox-sample
 spec:
-  preferredCluster: "tflow-rmn-aws-cluster5"
+  preferredCluster: "cluster-a"
   drPolicyRef:
     name: dr-policy
     namespace: ramen-samples
