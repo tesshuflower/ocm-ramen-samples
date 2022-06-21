@@ -4,15 +4,7 @@ kind: DRPolicy
 metadata:
   name: dr-policy
 spec:
-  drClusterSet:
-  - name: cluster-a
-    #s3ProfileName: minio-on-hub
-    s3ProfileName: NoS3
-    region: "mytest"
-    clusterFence: ManuallyFenced
-  - name: cluster-b
-    #s3ProfileName: minio-on-hub
-    s3ProfileName: NoS3
-    region: "mytest"
-    clusterFence: ManuallyFenced
+  drClusters:
+  - cluster-a
+  - cluster-b
   schedulingInterval: 10m
