@@ -6,8 +6,8 @@ metadata:
   labels:
     appname: busybox
 spec:
-  accessModes: [ "ReadWriteOnce" ]
-  storageClassName: "gp3-csi"
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: "ocs-storagecluster-cephfs"
   resources:
     requests:
       storage: 1Gi
