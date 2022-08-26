@@ -6,9 +6,10 @@ metadata:
   labels:
     app: busybox-sample
 spec:
-  preferredCluster: "cluster-a"
+  preferredCluster: "mgd1"
+  failoverCluster: "local-cluster"
   drPolicyRef:
-    name: dr-policy
+    name: drpolicy-sample
     namespace: ramen-samples
   placementRef:
     kind: PlacementRule

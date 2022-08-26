@@ -2,9 +2,9 @@
 apiVersion: ramendr.openshift.io/v1alpha1
 kind: DRPolicy
 metadata:
-  name: dr-policy
+  name: drpolicy-sample
 spec:
   drClusters:
-  - cluster-a
-  - cluster-b
+  - local-cluster
+  - mgd1
   schedulingInterval: 10m
