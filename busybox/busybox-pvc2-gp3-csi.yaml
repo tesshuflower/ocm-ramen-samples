@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: busybox-pvc
+  name: busybox-pvc2-gp3-csi
   labels:
     appname: busybox
 spec:
-  accessModes: [ "ReadWriteMany" ]
-  storageClassName: "ocs-storagecluster-cephfs"
+  accessModes: [ "ReadWriteOnce" ]
+  storageClassName: "gp3-csi"
   resources:
     requests:
       storage: 1Gi

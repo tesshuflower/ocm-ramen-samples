@@ -1,4 +1,5 @@
 ---
 resources:
-- busybox-pvc.yaml
+- busybox-pvc1-cephfs.yaml
+- busybox-pvc2-gp3-csi.yaml
 - busybox-pod.yaml
