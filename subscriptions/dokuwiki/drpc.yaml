@@ -1,0 +1,19 @@
+---
+apiVersion: ramendr.openshift.io/v1alpha1
+kind: DRPlacementControl
+metadata:
+  name: dokuwiki-drpc
+  labels:
+    app: dokuwiki-sample
+spec:
+  preferredCluster: "mgd1"
+  failoverCluster: "local-cluster"
+  drPolicyRef:
+    name: drpolicy-sample
+    namespace: ramen-samples
+  placementRef:
+    kind: PlacementRule
+    name: dokuwiki-placement
+  pvcSelector:
+    matchLabels:
+      appname: dokuwiki
