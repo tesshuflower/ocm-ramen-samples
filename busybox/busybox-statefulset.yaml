@@ -62,7 +62,7 @@ spec:
       storageClassName: "ocs-storagecluster-cephfs"
       resources:
         requests:
-          storage: 1G
+          storage: 1Gi
   - metadata:
       name: mypvc4
       labels:
@@ -72,4 +72,4 @@ spec:
       storageClassName: "ocs-storagecluster-cephfs"
       resources:
         requests:
-          storage: 1G
+          storage: 1Gi
