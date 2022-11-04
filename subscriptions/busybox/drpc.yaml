@@ -6,11 +6,10 @@ metadata:
   labels:
     app: busybox-sample
 spec:
-  preferredCluster: "mgd1"
-  failoverCluster: "local-cluster"
+  preferredCluster: "vmware-dccp-one"
+  failoverCluster: "prsurve-vm-d"
   drPolicyRef:
-    name: drpolicy-sample
-    namespace: ramen-samples
+    name: odr-policy-east-west-rpo-5m
   placementRef:
     kind: PlacementRule
     name: busybox-placement
