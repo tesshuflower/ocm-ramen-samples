@@ -1,3 +1,4 @@
 ---
 resources:
-- busybox-statefulset.yaml
+- busybox-pvc.yaml
+- busybox-pod.yaml

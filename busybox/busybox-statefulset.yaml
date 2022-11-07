@@ -26,12 +26,6 @@ spec:
         volumeMounts:
         - name: mypvc1
           mountPath: /mnt/test1
-        - name: mypvc2
-          mountPath: /mnt/test2
-        - name: mypvc3
-          mountPath: /mnt/test3
-        - name: mypvc4
-          mountPath: /mnt/test4
   volumeClaimTemplates:
   - metadata:
       name: mypvc1
@@ -42,34 +36,4 @@ spec:
       storageClassName: "ocs-storagecluster-cephfs"
       resources:
         requests:
-          storage: 1Gi
-  - metadata:
-      name: mypvc2
-      labels:
-        appname: busybox
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "gp3-csi"
-      resources:
-        requests:
-          storage: 1Gi
-  - metadata:
-      name: mypvc3
-      labels:
-        appname: busybox
-    spec:
-      accessModes: [ "ReadWriteMany" ]
-      storageClassName: "ocs-storagecluster-cephfs"
-      resources:
-        requests:
-          storage: 1G
-  - metadata:
-      name: mypvc4
-      labels:
-        appname: busybox
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "gp3-csi"
-      resources:
-        requests:
-          storage: 1G
+          storage: 2Gi
