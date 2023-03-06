@@ -19,7 +19,7 @@ spec:
       - name: busybox
         image: busybox
         imagePullPolicy: IfNotPresent
-        command: ['sh', '-c', 'while true; do echo $(date) | tee -a /mnt/test1/outfile1 /mnt/test2/outfile2 /mnt/test3/outfile3 /mnt/test4/outfile4; sync; sleep 10; done']
+        command: ['sh', '-c', 'while true; do echo $(date) | tee -a /mnt/test1/outfile1 /mnt/test2/outfile2; sync; sleep 10; done']
         #ports:
         #- containerPort: 80
         #  name: web
@@ -28,10 +28,6 @@ spec:
           mountPath: /mnt/test1
         - name: mypvc2
           mountPath: /mnt/test2
-        - name: mypvc3
-          mountPath: /mnt/test3
-        - name: mypvc4
-          mountPath: /mnt/test4
   volumeClaimTemplates:
   - metadata:
       name: mypvc1
@@ -53,23 +49,4 @@ spec:
       resources:
         requests:
           storage: 1Gi
-  - metadata:
-      name: mypvc3
-      labels:
-        appname: busybox
-    spec:
-      accessModes: [ "ReadWriteMany" ]
-      storageClassName: "ocs-storagecluster-cephfs"
-      resources:
-        requests:
-          storage: 1G
-  - metadata:
-      name: mypvc4
-      labels:
-        appname: busybox
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "gp3-csi"
-      resources:
-        requests:
-          storage: 1G
+
