@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
-  name: busybox-ss
+  name: busybox-deploy
 spec:
   selector:
     matchLabels:
@@ -28,25 +28,13 @@ spec:
           mountPath: /mnt/test1
         - name: mypvc2
           mountPath: /mnt/test2
-  volumeClaimTemplates:
-  - metadata:
-      name: mypvc1
-      labels:
-        appname: busybox
-    spec:
-      accessModes: [ "ReadWriteMany" ]
-      storageClassName: "ocs-storagecluster-cephfs"
-      resources:
-        requests:
-          storage: 1Gi
-  - metadata:
-      name: mypvc2
-      labels:
-        appname: busybox
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "gp3-csi"
-      resources:
-        requests:
-          storage: 1Gi
+      volumes:
+      - name: mypvc1
+        persistentVolumeClaim:
+          claimName: busybox-pvc1-cephfs
+          readOnly: false
+      - name: mypvc2
+        persistentVolumeClaim:
+          claimName:  busybox-pvc2-gp3-csi
+          readOnly: false
 
